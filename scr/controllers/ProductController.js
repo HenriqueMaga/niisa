@@ -15,7 +15,7 @@ module.exports = {
 
     async index (request, response) {
         console.log('Vou pesquisar produtos');
-        const products = await connection.Query() ;
+        const products = await Product.find() ;
         return response.json(products);
     }
 
