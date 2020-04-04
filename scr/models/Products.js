@@ -5,7 +5,11 @@ const ProductSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
-    value: {
+    valorMensal: {
+        type: Number,
+        require: true,
+    },
+    valorSemestral: {
         type: Number,
         require: true,
     },
