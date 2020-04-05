@@ -4,12 +4,10 @@ module.exports = {
     async create(request, response) {    
         try {
             const product = await Product.create(request.body);
-            const { name, type, value } = request.body;
-
-            console.log({ name, type, value });
+            
             return response.send({ product });
         } catch (err) {
-            return response.status(400).send({ error: 'Insert Failed' });
+            return response.status(400).send({ error: 'Insert Failed: ' + response.json(err.message) });
         }
     },
 
