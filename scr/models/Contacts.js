@@ -2,7 +2,11 @@ const mongoose = require('../database');
 require('mongoose-type-email');
 
 const ContactSchema = new mongoose.Schema({
-    name: {
+    firstName: {
+        type: String,
+        require: true,
+    },
+    lastName:{
         type: String,
         require: true,
     },
@@ -11,8 +15,7 @@ const ContactSchema = new mongoose.Schema({
         require: true,
     },
     email: {
-        type: mongoose.SchemaTypes.email,
-        require: true,
+        type: mongoose.SchemaTypes.Email,
     },
     telefone: {
         type: Number,
